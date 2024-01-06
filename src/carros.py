@@ -1,8 +1,6 @@
 import pyodbc
 import streamlit as st
 
-# Função para conectar ao banco de dados com tratamento de exceções
-@st.cache(allow_output_mutation=True)
 def connect_to_db():
     try:
         server = st.secrets["server"]
@@ -14,7 +12,6 @@ def connect_to_db():
     except Exception as e:
         st.error(f"Erro ao conectar ao banco de dados: {e}")
         return None
-
 # Função para inserir um novo registro na tabela com tratamento de exceções
 def insert_into_table(tipo, marca, modelo, cor, combustivel, ano, preco):
     try:
