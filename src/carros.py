@@ -7,7 +7,7 @@ def connect_to_db():
         database = st.secrets["database"]
         username = st.secrets["username"]
         password = st.secrets["password"]
-        connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server},1433;DATABASE={database};UID={username};PWD={password}'
+        connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
         return pyodbc.connect(connection_string)
     except Exception as e:
         st.error(f"Erro ao conectar ao banco de dados: {e}")
