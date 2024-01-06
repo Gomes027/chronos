@@ -70,4 +70,3 @@ preco = st.number_input('Preço', step=0.01, format="%.2f")
 # Botão para inserir os dados
 if st.button('Inserir Registro'):
     insert_into_table(tipo, marca, modelo, cor, combustivel, ano, preco)
-    st.success('Dados inseridos com sucesso!')
